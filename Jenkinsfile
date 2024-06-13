@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
     environment {
@@ -22,8 +23,10 @@ pipeline {
         }
         stage ("deploy docker container"){
             steps {
-                sh "docker run -itd --name $container_name -p $host_port:$containerport madhavareddy97056/job_board:$image_name"
+                sh "docker run -itd --name $container_name -p $host_port:$container_port madhavareddy97056/job_board:$image_name"
             }
         }
         }
     }
+
+
